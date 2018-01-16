@@ -11,7 +11,15 @@
   * 如果后一种看成是引用传递, 那就值传递和引用传递都可以有
 -->
 <script type="text/javascript">
+  function fn(a) {
 
+  }
+
+  var b = 2
+  fn(b) // 值传递
+  b = {}
+  fn(b) // 值传递(传递的是变量的值)
+        // 引用传递(传递的b的值是引用类型)
 </script>
 </body>
 </html>

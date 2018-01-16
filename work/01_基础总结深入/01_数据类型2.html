@@ -23,6 +23,35 @@
 -->
 
 <script type="text/javascript">
+  // 1. undefined与null的区别?
+  var a
+  console.log(a) // undefined 未赋值的变量
+  function fn() {
+
+  }
+  console.log(fn())  // undeined  调用没有return的函数
+  console.log(fn.xxx) // undefined 读取对象不存在的属性值
+
+  a = null
+  console.log(a) // null  变量赋值为null
+  a = {b: null}
+  console.log(a.b) // null  属性值是null
+
+  // 2. 什么时候给变量赋值为null呢?
+  // 1). 在程序的前面
+  var b = null  // 起暗示作用: 后面会赋值为对象
+  // 后面进行计算, 处理产生对象并保存
+  b = {n: 12, m: 34}
+
+  // 2). 在程序的后面
+  b = null // b指向的对象没有了指向它的引用, 就成为了垃圾对象从而被回收释放
+  // 问题: b就释放了吗?  没有, b是全局变量, 一直存在
+
+
+  // 3. 严格区别变量类型与数据类型?
+  a = 4
+  a = []
+
 
 </script>
 </body>

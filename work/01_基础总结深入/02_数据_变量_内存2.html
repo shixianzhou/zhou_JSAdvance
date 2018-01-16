@@ -12,7 +12,13 @@
   * xxx是一个变量
 -->
 <script type="text/javascript">
+  var a = 3  // a保存的3, 基本类型变量
+  a = {} // a保存的是{}的地址值, 引用类型变量
 
+  var b = 'abc'
+  a = b  // a保存的是b的值('abc'), 基本类型变量
+  b = []
+  a = b // a保存的是b的值(地址值), 引用类型变量
 </script>
 </body>
 </html>

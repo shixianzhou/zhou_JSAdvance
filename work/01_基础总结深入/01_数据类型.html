@@ -22,12 +22,37 @@
     * 可以区别: 数值, 字符串, 布尔值, undefined, function
     * 不能区别: null与对象, 一般对象与数组
   * instanceof
-    * 专门用来判断对象数据的类型: Object, Array与Function
+    * 专门用来判断对象数据的具体类型: Object, Array与Function
   * ===
     * 可以判断: undefined和null
 -->
 
 <script type="text/javascript">
+
+  //1. 基本类型
+  var a
+  console.log(a, a===undefined, typeof a, typeof a==='undefined') // undefined true 'undefined' true
+  a = 2
+  console.log(typeof a) // 'number'
+  a = 'atguigu'
+  console.log(typeof a) // 'string'
+  a = true
+  console.log(typeof a) // 'boolean'
+  a = null
+  console.log(typeof a, a===null) // 'object' true
+
+  // 对象类型
+  const b1 = {
+    b2: [12, 'abc', console.log]
+  }
+
+  console.log(b1 instanceof Object) // true
+  console.log(b1 instanceof Array) // false
+  console.log(b1.b2 instanceof Array) // true
+  console.log(b1.b2 instanceof Object) // true
+  console.log(b1.b2[2] instanceof Function, typeof b1.b2[2]==='function') // true  true
+  console.log(b1.b2[2] instanceof Object) // true
+
 
 </script>
 </body>
